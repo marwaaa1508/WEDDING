@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top, #f7f1ea, #e8ded3);
+    font-family: 'Playfair Display', serif;
+    overflow: hidden;
+}
+
+/* floating subtle background pattern */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+    opacity: 0.4;
+}
+
+/* ENVELOPE */
+.envelope {
+    position: relative;
+    width: 320px;
+    height: 220px;
+    background: #fffaf5;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+/* envelope flap */
+.flap {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-bottom: 110px solid #f0e6dc;
+    top: -110px;
+    left: 0;
+    transform-origin: bottom;
+    transition: 1s ease;
+}
+
+/* bottom fold */
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: #fffaf5;
+    border-top: 1px solid #e8ded3;
+}
+
+/* wax seal */
+.seal {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background: radial-gradient(circle at 30% 30%, #b86b5b, #7a3f36);
+    border-radius: 50%;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* INVITATION CARD */
+.card {
+    position: absolute;
+    width: 320px;
+    height: 420px;
+    background: #fffaf5;
+    top: 250px;
+    opacity: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 1s ease;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+/* decorative border */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid #c8b7a6;
+}
+
+/* Bismillah */
+.bismillah {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #6e5c4f;
+}
+
+/* couple names */
+.names {
+    font-family: 'Great Vibes', cursive;
+    font-size: 38px;
+    margin-top: 20px;
+    color: #7a3f36;
+}
+
+/* details */
+.details {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #5a4a3f;
+}
+
+/* OPEN STATE */
+.open .flap {
+    transform: rotateX(180deg);
+}
+
+.open .card {
+    top: 60px;
+    opacity: 1;
+}
+
+.open .seal {
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+}
+
+.open .envelope {
+    transform: translateY(-120px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="envelope" onclick="openInvite()">
+    <div class="flap"></div>
+    <div class="bottom"></div>
+    <div class="seal">SEAL</div>
+</div>
+
+<div class="card">
+    <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم</div>
+
+    <div style="margin-top:20px; font-size:16px; color:#7a3f36;">
+        You're Invited
+    </div>
+
+    <div class="names">Izhaq & Naeema</div>
+
+    <div class="details">
+        With hearts filled with gratitude and duas,<br>
+        we invite you to celebrate our wedding.<br><br>
+
+        <b>Date:</b> [Insert Date]<br>
+        <b>Venue:</b> [Insert Location]<br>
+        <b>Time:</b> [Insert Time]<br><br>
+
+        Your presence will make our day more blessed.
+    </div>
+</div>
+
+<script>
+function openInvite() {
+    document.body.classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
