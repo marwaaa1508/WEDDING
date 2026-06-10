@@ -83,7 +83,7 @@ Then update the CSS variables:
 ## File Structure
 
 ```
-wedding-invitation/
+WEDDING/
 ├── index.html      # Main invitation file
 └── README.md       # This file
 ```
@@ -91,7 +91,7 @@ wedding-invitation/
 ## Hosting on GitHub Pages
 
 1. Your invitation is already set up for GitHub Pages
-2. Visit: **https://marwaaa1508.github.io/invitation/**
+2. Visit: **https://marwaaa1508.github.io/WEDDING/**
 3. Share this link with your guests!
 
 ### To Enable GitHub Pages:
